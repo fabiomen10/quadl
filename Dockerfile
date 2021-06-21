@@ -17,7 +17,8 @@ RUN apk add \
                 cmake \
                 zlib-static zlib-dev \
                 lua5.1 lua5.1-dev \
-                linux-headers
+                linux-headers \
+                upx
 
 # source
 RUN git clone https://github.com/lpereira/lwan -b ${version} .
