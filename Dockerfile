@@ -50,7 +50,7 @@ FROM scratch
 # labels
 LABEL org.label-schema.vcs-url="https://github.com/fabiomen10/quadl"
 LABEL org.label-schema.version=${version}
-LABEL org.label-schema.schema-version="0.0.1"
+LABEL org.label-schema.schema-version="0.0.2"
 
 # copy binary and ca certs
 COPY --from=build /build/build/src/bin/lwan/lwan /bin/lwan
