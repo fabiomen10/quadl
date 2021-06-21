@@ -28,7 +28,7 @@ RUN mkdir build \
     && cmake \
                 .. \
                 -DCMAKE_C_COMPILER=clang \
-                -DCMAKE_BUILD_TYPE=Release \
+                -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                 -DCMAKE_EXE_LINKER_FLAGS="-static" \
                 -DCMAKE_C_FLAGS="-static" \
     && make
@@ -51,7 +51,7 @@ COPY --from=build /build/build/src/bin/lwan/lwan /bin/lwan
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 # copy default configuration
-COPY lwan.conf /etc/lwan.conf
+COPY --from=build lwan.conf /etc/lwan.conf
 
 # copy empty temp folder
 COPY --from=build /tmp /tmp
