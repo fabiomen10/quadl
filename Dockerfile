@@ -57,7 +57,7 @@ COPY --from=build /build/build/src/bin/lwan/lwan /bin/lwan
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 # copy default configuration
-COPY --from=build lwan.conf /etc/lwan.conf
+COPY lwan.conf /etc/lwan.conf
 
 # copy empty temp folder
 COPY --from=build /tmp /tmp
