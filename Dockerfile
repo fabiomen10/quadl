@@ -47,7 +47,7 @@ RUN mkdir -p /tmp
 FROM scratch
 
 # labels
-LABEL org.label-schema.vcs-url="https://github.com/curiogeek/quadl"
+LABEL org.label-schema.vcs-url="https://github.com/FabioMen10/quadl"
 LABEL org.label-schema.version=${version}
 LABEL org.label-schema.schema-version="0.0.1"
 
