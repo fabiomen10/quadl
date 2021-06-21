@@ -44,7 +44,7 @@ RUN mkdir -p /tmp
 #
 # Final image
 #
-FROM scratch
+#FROM scratch
 
 # labels
 LABEL org.label-schema.vcs-url="https://github.com/fabiomen10/quadl"
