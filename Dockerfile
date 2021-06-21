@@ -35,8 +35,9 @@ RUN mkdir build \
     && make
 
 # compress and test
-RUN ls -l /src/bin/lwan \
-    && upx --ultra-brute /src/bin/lwan/lwan
+RUN cd build \
+    && ls -l src/bin/lwan \
+    && upx --ultra-brute src/bin/lwan/lwan
 
 # make a temp folder
 RUN mkdir -p /tmp
