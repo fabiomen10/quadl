@@ -62,8 +62,8 @@ COPY --from=build /build/lwan.conf /etc/lwan.conf
 # copy empty temp folder
 COPY --from=build /tmp /tmp
 
-# serve form /srv
-WORKDIR /srv
+# serve form /quadl
+WORKDIR /quadl
 EXPOSE 8080
 
 ENTRYPOINT ["/bin/lwan", "--config", "/etc/lwan.conf"]
