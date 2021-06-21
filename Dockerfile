@@ -33,11 +33,6 @@ RUN mkdir build \
                 -DCMAKE_C_FLAGS="-static" \
     && make
 
-# compress and test
-RUN cd build \
-    && ls -l /src/bin/lwan \
-    && upx --ultra-brute /src/bin/lwan/lwan
-
 # make a temp folder
 RUN mkdir -p /tmp
 
@@ -60,6 +55,11 @@ COPY lwan.conf /etc/lwan.conf
 
 # copy empty temp folder
 COPY --from=build /tmp /tmp
+
+# compress and test
+RUN cd build \
+    && ls -l /src/bin/lwan \
+    && upx --ultra-brute /src/bin/lwan/lwan
 
 # serve form /srv
 WORKDIR /srv
