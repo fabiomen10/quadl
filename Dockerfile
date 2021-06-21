@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM alpine:latest
+FROM alpine:latest as build
 
 # args
 ARG version="master"
@@ -44,7 +44,7 @@ RUN mkdir -p /tmp
 #
 # Final image
 #
-# FROM scratch
+FROM scratch
 
 # labels
 LABEL org.label-schema.vcs-url="https://github.com/fabiomen10/quadl"
